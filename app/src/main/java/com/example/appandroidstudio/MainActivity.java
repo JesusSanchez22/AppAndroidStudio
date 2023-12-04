@@ -2,7 +2,10 @@ package com.example.appandroidstudio;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -12,11 +15,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toast.makeText(this, "ccc", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "uuu", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "fff", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "aaa", Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, "bbb", Toast.LENGTH_SHORT).show();
+        Button button = findViewById(R.id.button);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,Inicio.class);
+                startActivity(intent);
+            }
+        });
+
+
 
     }
 }
